@@ -45,11 +45,6 @@ The system is built with scalability, role-based access, and clean modular desig
 - Payroll control and updates by Admin
 - Monthly payroll records
 - Salary components: basic, allowances, deductions
-
-### 🔔 Notifications & Logs
-- System notifications for approvals and updates
-- Admin action logging for audit and accountability
-
 ---
 
 ## 🏗️ Tech Stack
