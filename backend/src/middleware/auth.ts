@@ -31,7 +31,13 @@ export const protect = async (
       return;
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || '') as {
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      res.status(500).json({ message: 'Server configuration error' });
+      return;
+    }
+    
+    const decoded = jwt.verify(token, secret) as {
       id: string;
     };
 

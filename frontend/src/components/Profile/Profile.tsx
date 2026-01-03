@@ -29,12 +29,12 @@ const Profile: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await api.put(`/employees/${user?.employeeId}`, {
+      const response = await api.put(`/employees/${user?.employeeId}`, {
         personalDetails: formData,
       });
+      setEmployee(response.data.employee);
       setMessage('Profile updated successfully');
       setIsEditing(false);
-      window.location.reload();
     } catch (error) {
       setMessage('Failed to update profile');
     }
