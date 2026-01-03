@@ -1,0 +1,121 @@
+.attendance-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.attendance-header {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.attendance-header h2 {
+  color: #333;
+}
+
+.attendance-actions {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-checkin,
+.btn-checkout {
+  padding: 15px 30px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn-checkin {
+  background: #28a745;
+}
+
+.btn-checkin:hover:not(:disabled) {
+  background: #218838;
+}
+
+.btn-checkout {
+  background: #dc3545;
+}
+
+.btn-checkout:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.btn-checkin:disabled,
+.btn-checkout:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.attendance-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-list h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f8f9fa;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+th {
+  font-weight: 600;
+  color: #555;
+}
+
+td {
+  color: #333;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-present {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-absent {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-half-day {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-leave {
+  background: #d1ecf1;
+  color: #0c5460;
+}
