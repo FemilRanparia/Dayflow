@@ -1,0 +1,163 @@
+.org-selector-container {
+    width: 100%;
+}
+
+.org-selector-loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.org-selector-loading .spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 1rem;
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid var(--brand-color, #667eea);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.org-selector-loading p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.org-selector-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.org-selector-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.org-selector-header p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.org-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.org-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-color, #667eea);
+}
+
+.org-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.org-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.org-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.org-info {
+    flex: 1;
+}
+
+.org-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.25rem 0;
+}
+
+.org-subdomain {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.org-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.org-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.org-arrow {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    transition: transform 0.3s ease;
+}
+
+.org-card:hover .org-arrow {
+    transform: translateX(4px);
+    color: var(--brand-color, #667eea);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .org-card {
+        padding: 1rem;
+    }
+
+    .org-logo,
+    .org-logo-placeholder {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .org-info h4 {
+        font-size: 0.9375rem;
+    }
+
+    .org-subdomain {
+        font-size: 0.8125rem;
+    }
+}

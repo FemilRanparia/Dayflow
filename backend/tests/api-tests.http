@@ -1,0 +1,163 @@
+### Multi-Tenant Backend API Tests
+### Use with REST Client extension in VS Code or any HTTP client
+
+@baseUrl = http://localhost:5000/api
+@token = 
+@employeeToken = 
+
+###############################################
+# Test 1: Login as Super Admin
+###############################################
+
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "superadmin@dayflow.com",
+  "password": "SuperAdmin@123"
+}
+
+###############################################
+# Test 2: Get Organizations by Email
+###############################################
+
+POST {{baseUrl}}/auth/organizations-by-email
+Content-Type: application/json
+
+{
+  "email": "superadmin@dayflow.com"
+}
+
+###############################################
+# Test 3: Create Employee
+# (Replace @token with actual JWT from Test 1)
+###############################################
+
+POST {{baseUrl}}/users/employees
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "employeeId": "EMP001",
+  "email": "john.doe@demo.com",
+  "password": "Password123!",
+  "firstName": "John",
+  "lastName": "Doe",
+  "department": "Engineering",
+  "designation": "Software Developer",
+  "role": "Employee",
+  "phone": "+91 9876543210",
+  "employmentType": "Full-Time",
+  "basicSalary": 50000,
+  "allowances": 10000,
+  "deductions": 5000
+}
+
+###############################################
+# Test 4: Get All Employees (Filtered by Org)
+###############################################
+
+GET {{baseUrl}}/users/employees
+Authorization: Bearer {{token}}
+
+###############################################
+# Test 5: Login as Employee
+###############################################
+
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@demo.com",
+  "password": "Password123!"
+}
+
+###############################################
+# Test 6: Check-In (Employee)
+# (Replace @employeeToken with JWT from Test 5)
+###############################################
+
+POST {{baseUrl}}/attendance/check-in
+Authorization: Bearer {{employeeToken}}
+
+###############################################
+# Test 7: Get Today's Attendance (Employee)
+###############################################
+
+GET {{baseUrl}}/attendance/today
+Authorization: Bearer {{employeeToken}}
+
+###############################################
+# Test 8: Apply for Leave (Employee)
+###############################################
+
+POST {{baseUrl}}/leaves
+Content-Type: application/json
+Authorization: Bearer {{employeeToken}}
+
+{
+  "leaveType": "Paid",
+  "startDate": "2026-01-20",
+  "endDate": "2026-01-22",
+  "reason": "Personal work"
+}
+
+###############################################
+# Test 9: Get My Leaves (Employee)
+###############################################
+
+GET {{baseUrl}}/leaves/my-leaves
+Authorization: Bearer {{employeeToken}}
+
+###############################################
+# Test 10: Get All Leaves (Admin - Filtered)
+###############################################
+
+GET {{baseUrl}}/leaves
+Authorization: Bearer {{token}}
+
+###############################################
+# Test 11: Get All Attendance (Admin - Filtered)
+###############################################
+
+GET {{baseUrl}}/attendance/all
+Authorization: Bearer {{token}}
+
+###############################################
+# Test 12: Get Employee by ID
+###############################################
+
+GET {{baseUrl}}/users/employees/USER_ID_HERE
+Authorization: Bearer {{token}}
+
+###############################################
+# Test 13: Update Employee
+###############################################
+
+PUT {{baseUrl}}/users/employees/USER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "department": "Product",
+  "designation": "Senior Developer",
+  "salary": {
+    "basicSalary": 60000,
+    "allowances": 15000,
+    "deductions": 5000
+  }
+}
+
+###############################################
+# Test 14: Check-Out (Employee)
+###############################################
+
+POST {{baseUrl}}/attendance/check-out
+Authorization: Bearer {{employeeToken}}
+
+###############################################
+# Test 15: Get My Attendance (Employee)
+###############################################
+
+GET {{baseUrl}}/attendance/my-attendance
+Authorization: Bearer {{employeeToken}}

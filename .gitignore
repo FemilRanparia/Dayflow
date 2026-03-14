@@ -1,0 +1,99 @@
+# ===========================
+# Dependencies
+# ===========================
+node_modules/
+.pnp
+.pnp.js
+
+# ===========================
+# Environment Variables
+# ===========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===========================
+# Build Outputs
+# ===========================
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+logs/
+
+# ===========================
+# Uploads / User Files
+# ===========================
+uploads/
+backend/uploads/
+
+# ===========================
+# OS Files
+# ===========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Editor / IDE
+# ===========================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-workspace
+
+# ===========================
+# Testing
+# ===========================
+coverage/
+.nyc_output/
+
+# ===========================
+# Misc
+# ===========================
+*.tgz
+*.tar.gz
+*.zip
+.yarn-integrity
+.eslintcache
+.parcelcache
+.sass-cache/
+
+# ===========================
+# Markdown Documentation Files
+# (Session notes / dev guides)
+# ===========================
+*.md
+!README.md
+
+# ===========================
+# PowerShell Scripts
+# ===========================
+remove-emojis.ps1
+
+# ===========================
+# Text Notes
+# ===========================
+Features to implement.txt
